@@ -10,17 +10,31 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void convert(View view) {
+    public void convert (View view) {
 
-        EditText dollarField = (EditText) findViewById(R.id.dollarField);
+        EditText poundField = (EditText) findViewById(R.id.poundField);
 
-        Double dollarAmount = Double.parseDouble(dollarField.getText().toString());
+        Double dollarAmount = Double.parseDouble(poundField.getText().toString());
 
         Double poundAmount = dollarAmount * .66;
 
         Toast.makeText(getApplicationContext(), "£" + poundAmount.toString(), Toast.LENGTH_LONG).show();
 
     }
+
+    public void convertReal (View view) {
+
+        EditText realField = (EditText) findViewById(R.id.realField);
+
+        Double dollarAmountTwo = Double.parseDouble(realField.getText().toString());
+
+        Double realAmount = dollarAmountTwo * 3.81;
+
+        Toast.makeText(getApplicationContext(), "R$" + realAmount.toString(), Toast.LENGTH_LONG).show();
+
+    }
+
+
 
 
 
