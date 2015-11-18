@@ -2,11 +2,11 @@ package com.example.guest.currencyconverter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,8 +14,16 @@ public class MainActivity extends AppCompatActivity {
 
         EditText dollarField = (EditText) findViewById(R.id.dollarField);
 
-        Log.i("dollarField", dollarField.getText().toString());
+        Double dollarAmount = Double.parseDouble(dollarField.getText().toString());
+
+        Double poundAmount = dollarAmount * .66;
+
+        Toast.makeText(getApplicationContext(), "£" + poundAmount.toString(), Toast.LENGTH_LONG).show();
+
     }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
